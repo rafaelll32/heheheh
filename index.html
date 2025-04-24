@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>roden memek</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Hai Kamu! 💖</h1>
+    <p>Aku punya satu pertanyaan penting nih...</p>
+    <h2>Maukah kamu jadi pacarku? 😳❤️</h2>
+    <div class="buttons">
+      <button onclick="jawab('yes')">Mau 🥰</button>
+      <button onclick="jawab('no')">Enggak 😢</button>
+    </div>
+    <div id="response"></div>
+  </div>
+  <div class="hearts"></div>
+
+  <script>
+    function jawab(pilihan) {
+      const response = document.getElementById('response');
+      if (pilihan === 'yes') {
+        response.innerHTML = "<h3>Yeeey! Aku seneng banget! 😍💞</h3>";
+      } else {
+        response.innerHTML = "<h3>Yahh...tapi harus mau gaboleh nolak 💔</h3>";
+      }
+    }
+
+    // animasi love-love
+    const heartsContainer = document.querySelector('.hearts');
+    setInterval(() => {
+      const heart = document.createElement('div');
+      heart.className = 'heart';
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.animationDuration = Math.random() * 2 + 3 + 's';
+      heartsContainer.appendChild(heart);
+      setTimeout(() => heart.remove(), 5000);
+    }, 300);
+  </script>
+</body>
+</html>
+<style class="css">body {
+  background: #ffe6e6;
+  font-family: 'Comic Sans MS', cursive;
+  text-align: center;
+  padding: 40px;
+}
+
+.container {
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  display: inline-block;
+}
+
+h1, h2, p, h3 {
+  margin: 10px;
+  color: #ff4d6d;
+}
+
+.buttons {
+  margin-top: 20px;
+}
+
+button {
+  font-size: 18px;
+  padding: 10px 20px;
+  margin: 0 10px;
+  border: none;
+  border-radius: 12px;
+  background-color: #ff80ab;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background-color: #ff4d6d;
+  transform: scale(1.1);
+}
+
+/* animasi hati */
+.hearts {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.heart {
+  position: absolute;
+  top: 100%;
+  width: 20px;
+  height: 20px;
+  background: url('https://i.imgur.com/Qp2dBFG.png') no-repeat center center / cover;
+  animation: floatUp ease-in-out;
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100vh) scale(1.5);
+    opacity: 0;
+  }
+}
+</style>
